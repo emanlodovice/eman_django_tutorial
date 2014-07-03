@@ -10,18 +10,18 @@
 
 	<div class="content">
 		<p class="title">Recent Polls</p>
-		<div class="details">
-			{% if latest_poll_list %}			
+		{% if latest_poll_list %}	
+			<div class="details">				
 				{% for poll in latest_poll_list %}
 					<a href="{% url 'polls2:detail' poll.id %}" class="option"> 
 						<p>{{ poll.question }} </p>
 						<em> {{ poll.pub_date }} </em>
 					</a>
 				{% endfor %}			
-			{% else %}
-				<p>No polls are available</p>
-			{% endif %}
-		</div>
+			</div>
+		{% else %}
+			<p class="error">No polls are available</p>
+		{% endif %}	
 	</div>
 
 </body>
