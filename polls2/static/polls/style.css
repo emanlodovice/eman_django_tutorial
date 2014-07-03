@@ -97,3 +97,7 @@ a:hover {
 .content .ok {
 	background-color: #808080;
 }
+
+.error {
+	color: red;
+}

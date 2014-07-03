@@ -10,11 +10,11 @@
 	<h1><a href="{% url 'polls2:index' %}"> Poll-All-<em>U</em>-Want </a></h1>
 
 	<div class="content">
+		{% if error_message %}
+			<p class="error"><em class="error">{{ error_message }}</em></p>
+		{% endif %}
 		<p class="title"> {{ poll.question }} </p>
-		<div class="details">
-			{% if error_message %}
-				<p><strong>{{ error_message }}</strong>></p>
-			{% endif %}
+		<div class="details">			
 
 			<form action="{% url 'polls2:vote' poll.id %}" method="POST">
 				{% csrf_token %}
