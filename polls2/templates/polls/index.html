@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+</head>
+
+<body>
+	<h1><a href="{% url 'polls2:index' %}"> Poll-All-<em>U</em>-Want </a></h1>
+
+	<div class="content">
+		<p class="title">Recent Polls</p>
+		<div class="details">
+			{% if latest_poll_list %}			
+				{% for poll in latest_poll_list %}
+					<a href="{% url 'polls2:detail' poll.id %}" class="option"> 
+						<p>{{ poll.question }} </p>
+						<em> {{ poll.pub_date }} </em>
+					</a>
+				{% endfor %}			
+			{% else %}
+				<p>No polls are available</p>
+			{% endif %}
+		</div>
+	</div>
+
+</body>
+</html>

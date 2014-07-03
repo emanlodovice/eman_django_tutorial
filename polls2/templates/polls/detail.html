@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+</head>
+
+<body>
+
+	<h1><a href="{% url 'polls2:index' %}"> Poll-All-<em>U</em>-Want </a></h1>
+
+	<div class="content">
+		<p class="title"> {{ poll.question }} </p>
+		<div class="details">
+			{% if error_message %}
+				<p><strong>{{ error_message }}</strong>></p>
+			{% endif %}
+
+			<form action="{% url 'polls2:vote' poll.id %}" method="POST">
+				{% csrf_token %}
+				{% for choice in poll.choice_set.all %}
+					<div class="option">
+						<input type="radio" name="choice" value="{{choice.id}}" id="choice{{choice.id}}"></li>
+						<label for="choice{{choice.id}}">{{ choice.choice_text }}</label>
+					</div>
+				{% endfor %}
+				<input type="submit" value="VOTE" class="button ok">				
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>

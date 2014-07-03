@@ -1,0 +1,99 @@
+* {
+	box-sizing: border-box;
+	text-decoration: none;
+	color: #222;
+	font-family: Arial;
+}
+
+body, html {
+	padding: 0px;
+	margin: 0px;
+}
+
+h1 {
+	text-align: left;
+	background: #F8F8F8;
+	padding: 20px;
+	padding-top: 30px; 
+	margin-top: -10px;
+	margin-bottom: 0px;
+	border-bottom: 1px solid black;
+	font-family: Arial;
+	font-size: 40px;
+}
+
+em {
+	color: black;
+}
+
+a:hover {
+	color: black;
+}
+
+.content {
+	display: block;
+	width: 500px;
+	margin: 0 auto;	
+	padding: 10px;
+}
+
+.content .title {
+	font-size: 25px;
+	margin-top: 0px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.content .details {	
+	position: relative;
+	z-index: 2;
+}
+
+.content .details:before {
+	content: '';
+	width: 15px;
+	height: 15px;
+	position: absolute;
+	top: -8px;
+	left: 10px;
+	background: #CCCCCC;
+	-webkit-transform:rotate(45deg);
+	-moz-transform:rotate(45deg);
+
+}
+
+.content .option {
+	display: block;
+	padding: 10px;
+	background: #CCCCCC;
+	margin-bottom: 1px;
+}
+
+.content .option p {
+	margin: 0px;
+}
+
+.content .option em {
+	font-size: 10px;
+	padding-left: 20px;
+}
+
+.content .button {
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border: none;
+	margin: 0px;
+	margin-top: 2px;
+	margin-right: 5px;
+	display: inline-block;
+}
+
+.content .button:hover {
+	color: black;
+	cursor: pointer;
+}
+
+.content .ok {
+	background-color: #808080;
+}
