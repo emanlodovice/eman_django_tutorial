@@ -1,0 +1,12 @@
+#!/home/eman/.virtualenvs/plex/bin/python
+
+import sys
+sys.path[0:0] = [
+  '/home/eman/.virtualenvs/plex/lib/python2.7/site-packages',
+  '/home/eman/python_codes/django_projects/mysite2/eggs/zc.buildout-2.2.1-py2.7.egg',
+  ]
+
+import zc.buildout.buildout
+
+if __name__ == '__main__':
+    sys.exit(zc.buildout.buildout.main())
